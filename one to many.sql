@@ -1,6 +1,6 @@
 #add a foreign key from one primary key to the other primary key to make a one to one relation
-create database oneToOne;
-use oneToOne;
+create database oneToMany;
+use oneToMany;
 
 create table student(
 student_ID varchar(10) not null,
@@ -24,4 +24,3 @@ desc student;
 
 insert into student values("1120903902","mike","macmiller");
 insert into contactInfo values("1120903902","nyc","19920918910");
-
