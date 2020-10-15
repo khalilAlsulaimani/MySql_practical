@@ -32,3 +32,6 @@ enrollmentID varchar(5),
 constraint FK_stdID foreign key (studentID) references student(std_id),
 constraint FK_classID foreign key (classID) references classes(class_ID)
 );
+
+desc student;
+insert into student values("1","khalil","alsulaimani");
