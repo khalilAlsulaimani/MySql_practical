@@ -1,6 +1,6 @@
-create database relation;
+create database manyToMany;
 
-use relation;
+use manyToMany;
 
 #many to many relationship need a joining table between them to take both tables to make a combined key in it asa the forgin key
 create table student(
@@ -11,7 +11,7 @@ constraint PK_stdID primary key(std_id)# insted of making a colum the primary ke
 );
 
 
-SELECT * FROM relation.student;
+SELECT * FROM manyToMany.student;
 
 create table classes(
 class_ID varchar(3) not null,
@@ -33,5 +33,5 @@ constraint FK_stdID foreign key (studentID) references student(std_id),
 constraint FK_classID foreign key (classID) references classes(class_ID)
 );
 
-desc student;
+desc student;#shows the tables types and conditins 
 insert into student values("1","khalil","alsulaimani");
