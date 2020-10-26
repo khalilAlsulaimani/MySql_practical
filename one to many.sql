@@ -2,25 +2,27 @@
 create database oneToMany;
 use oneToMany;
 
-create table student(
-student_ID varchar(10) not null,
+create table custmor(
+custmor_ID varchar(10) unique not null,
 firstName varchar(20),
 lastName varchar(20),
-constraint PK_student_ID primary key (student_ID)
+constraint PK_student_ID primary key (custmor_ID)
 );
 
-create table contactInfo(
-student_ID varchar(10) not null,
+create table orders(
+custmor_ID varchar(10) unique not null,
+order_ID varchar(10) unique not null,
 city varchar(10),
 phone_number varchar(11),
-constraint FK_student_ID foreign key  (student_ID) references student(student_ID)
+constraint FK_custmor_ID foreign key  (custmor_ID) references custmor(custmor_ID),
+constraint PK_order_ID primary key (order_ID)
 ); 
 
-select * from student;
-select * from contactInfo;
+select * from custmor;
+select * from orders;
 
-desc contactInfo;
-desc student;
+desc custmor;
+desc orders;
 
-insert into student values("1120903902","mike","macmiller");
-insert into contactInfo values("1120903902","nyc","19920918910");
+insert into custmor values("1120903902","mike","macmiller");
+insert into orders values("1120903902","1000","nyc","097839091");
