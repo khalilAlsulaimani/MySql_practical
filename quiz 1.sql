@@ -32,3 +32,6 @@ insert into MANAGER values(21,"zain",8090,9000, '1980-10-01');
 insert into MANAGER values(01,"taylor",8000,3000, '1990-09-10');
 
 select * from MANAGER;
+
+alter table MANAGER add  constraint PK_mno primary key (MNO);
+alter table TEACHER add constraint PK_TNO primary key (TNO);
